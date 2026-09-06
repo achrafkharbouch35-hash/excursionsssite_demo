@@ -1,32 +1,52 @@
 /* =========================================================
    NOMADIA TRAVEL — Design tokens
    ========================================================= */
-:root{
-  --cream:#F8F3E9;
-  --sand:#E7D6B4;
-  --sand-deep:#D9C39A;
-  --terracotta:#C1622D;
-  --terracotta-dark:#A24E22;
-  --olive:#5C6A3C;
-  --olive-dark:#454F2C;
-  --black:#1C1712;
-  --black-soft:#2A2319;
-  --gold:#B08D4F;
-  --ink:#2A2319;
-  --ink-soft:#6B6255;
-  --white:#FFFDF9;
+/* =========================================================
+   CLIENT 3 — Design tokens
+   STYLE IDENTIQUE — COULEURS UNIQUEMENT
+   ========================================================= */
 
+:root{
+  /* Couleurs principales */
+  --cream:#F4F1EA;
+  --sand:#DDE7E4;
+  --sand-deep:#C5D6D2;
+
+  /* Couleur principale — bleu pétrole */
+  --terracotta:#167D83;
+  --terracotta-dark:#0E5F64;
+
+  /* Couleur secondaire — vert forêt */
+  --olive:#3F6655;
+  --olive-dark:#2E4D40;
+
+  /* Texte */
+  --black:#172321;
+  --black-soft:#22332F;
+  --ink:#22332F;
+  --ink-soft:#65736F;
+
+  /* Blanc */
+  --white:#FFFEFB;
+
+  /* Doré léger */
+  --gold:#B5965A;
+
+  /* Polices — INCHANGÉES */
   --font-display:'Fraunces', serif;
   --font-body:'Manrope', sans-serif;
 
+  /* Rayons — INCHANGÉS */
   --radius-s:6px;
   --radius-m:14px;
   --radius-l:26px;
 
-  --shadow-card: 0 18px 40px -22px rgba(28,23,18,0.35);
-  --shadow-soft: 0 10px 30px -18px rgba(28,23,18,0.25);
+  /* Ombres — légèrement adaptées aux nouvelles couleurs */
+  --shadow-card:0 18px 40px -22px rgba(23,35,33,0.35);
+  --shadow-soft:0 10px 30px -18px rgba(23,35,33,0.25);
 
-  --ease: cubic-bezier(.22,.68,0,1);
+  /* Animations — INCHANGÉES */
+  --ease:cubic-bezier(.22,.68,0,1);
 }
 
 *{box-sizing:border-box;}
