@@ -6,46 +6,48 @@
    STYLE IDENTIQUE — COULEURS UNIQUEMENT
    ========================================================= */
 
+/* =========================================================
+   CLIENT 3 — Design tokens
+   Même structure / mêmes animations / nouveau thème
+   ========================================================= */
 :root{
   /* Couleurs principales */
-  --cream:#F4F1EA;
-  --sand:#DDE7E4;
-  --sand-deep:#C5D6D2;
+  --cream:#F3F8F7;
+  --sand:#DCEDEA;
+  --sand-deep:#BFDCD7;
 
-  /* Couleur principale — bleu pétrole */
+  /* Couleur principale */
   --terracotta:#167D83;
-  --terracotta-dark:#0E5F64;
+  --terracotta-dark:#0F6268;
 
-  /* Couleur secondaire — vert forêt */
-  --olive:#3F6655;
-  --olive-dark:#2E4D40;
+  /* Couleur secondaire */
+  --olive:#2F6F68;
+  --olive-dark:#24564F;
 
   /* Texte */
-  --black:#172321;
-  --black-soft:#22332F;
-  --ink:#22332F;
-  --ink-soft:#65736F;
+  --black:#102A2E;
+  --black-soft:#18383C;
+  --gold:#B58A4A;
+  --ink:#18383C;
+  --ink-soft:#617477;
 
   /* Blanc */
-  --white:#FFFEFB;
+  --white:#FFFFFF;
 
-  /* Doré léger */
-  --gold:#B5965A;
-
-  /* Polices — INCHANGÉES */
+  /* Polices — NE PAS CHANGER */
   --font-display:'Fraunces', serif;
   --font-body:'Manrope', sans-serif;
 
-  /* Rayons — INCHANGÉS */
+  /* Rayons — NE PAS CHANGER */
   --radius-s:6px;
   --radius-m:14px;
   --radius-l:26px;
 
-  /* Ombres — légèrement adaptées aux nouvelles couleurs */
-  --shadow-card:0 18px 40px -22px rgba(23,35,33,0.35);
-  --shadow-soft:0 10px 30px -18px rgba(23,35,33,0.25);
+  /* Ombres — même style */
+  --shadow-card:0 18px 40px -22px rgba(16,42,46,0.35);
+  --shadow-soft:0 10px 30px -18px rgba(16,42,46,0.25);
 
-  /* Animations — INCHANGÉES */
+  /* Animations — NE PAS CHANGER */
   --ease:cubic-bezier(.22,.68,0,1);
 }
 
