@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHIHAJA TRAVEL — Excursions, Circuits &amp; Voyages sur mesure au Maroc</title>
+<meta name="description" content="CHIHAJA TRAVEL organise vos excursions, tours privés et circuits au Maroc : désert, montagnes, villes impériales et côte atlantique. Réservation simple, guides locaux, assistance WhatsApp 24/7.">
+<meta property="og:title" content="CHIHAJA TRAVEL — Explorez. Vivez. Souvenez-vous.">
+<meta property="og:description" content="Excursions, circuits et expériences sur mesure à travers le Maroc.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1489493887464-892be6d1daae?q=80&w=1200&auto=format&fit=crop">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#accueil" class="brand">
+      <span class="brand-main">CHIHAJA</span>
+      <span class="brand-sub">Travel &amp; Excursions</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil" class="nav-link active">Accueil</a>
+      <a href="#excursions" class="nav-link">Excursions</a>
+      <a href="#destinations" class="nav-link">Destinations</a>
+      <a href="#circuits" class="nav-link">Circuits</a>
+      <a href="#apropos" class="nav-link">À propos</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="navbar-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Rechercher">
+        <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.5" y2="16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="favToggle" aria-label="Mes favoris">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M12 20.5s-7.5-4.6-10-9.2C0.3 8 1.7 4.3 5.2 3.6c2.1-0.4 4.1 0.6 5.2 2.3c1.1-1.7 3.1-2.7 5.2-2.3c3.5 0.7 4.9 4.4 3.2 7.7c-2.5 4.6-10 9.2-10 9.2z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="fav-count" id="favCount">0</span>
+      </button>
+      <a class="btn btn-whatsapp btn-sm" id="navWhatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.9-4.45 9.9-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.55-3.7 8.24-8.25 8.24c-1.44 0-2.85-.37-4.09-1.08l-.29-.17l-3.11.82l.83-3.03l-.19-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.24-8.24z"/></svg>
+        WhatsApp
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#accueil" class="mobile-link">Accueil</a>
+    <a href="#excursions" class="mobile-link">Excursions</a>
+    <a href="#destinations" class="mobile-link">Destinations</a>
+    <a href="#circuits" class="mobile-link">Circuits</a>
+    <a href="#apropos" class="mobile-link">À propos</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </nav>
+  <a class="btn btn-whatsapp" id="mobileWhatsapp" target="_blank" rel="noopener">Discuter sur WhatsApp</a>
+</div>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="searchOverlay">
+  <button class="overlay-close" id="searchClose" aria-label="Fermer">&times;</button>
+  <div class="search-overlay-inner">
+    <p class="search-eyebrow">Trouvez votre excursion</p>
+    <input type="text" id="liveSearchInput" placeholder="Rechercher une destination... (ex : Marrakech)" autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="accueil">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?q=80&w=1600&auto=format&fit=crop" alt="Dunes du désert marocain au coucher du soleil" fetchpriority="high">
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Explorez le Maroc autrement</p>
+    <h1 class="hero-title">Des expériences<br>qui restent.</h1>
+    <p class="hero-desc">Découvrez les paysages, les cultures et les trésors du Maroc à travers des excursions soigneusement organisées.</p>
+
+    <div class="hero-buttons">
+      <a href="#excursions" class="btn btn-primary">Découvrir nos excursions</a>
+      <a class="btn btn-outline-light btn-whatsapp-link" id="heroWhatsapp" target="_blank" rel="noopener">Contacter sur WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="hero-rating">
+    <span class="stars">★★★★★</span>
+    <p>+500 voyageurs satisfaits</p>
+  </div>
+
+  <form class="hero-search" id="heroSearchForm">
+    <div class="hero-search-field">
+      <label for="hsWhere">Où souhaitez-vous aller ?</label>
+      <input type="text" id="hsWhere" placeholder="Marrakech, désert, montagne...">
+    </div>
+    <div class="hero-search-divider"></div>
+    <div class="hero-search-field">
+      <label for="hsDate">Date</label>
+      <input type="date" id="hsDate">
+    </div>
+    <div class="hero-search-divider"></div>
+    <div class="hero-search-field">
+      <label for="hsGuests">Voyageurs</label>
+      <input type="number" id="hsGuests" min="1" value="2">
+    </div>
+    <button type="submit" class="btn btn-primary hero-search-btn">Rechercher</button>
+  </form>
+</section>
+
+<!-- ============ EXCURSIONS ============ -->
+<section class="section" id="excursions">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Nos expériences les plus populaires</h2>
+        <p class="section-subtitle">Choisissez votre prochaine aventure.</p>
+      </div>
+    </div>
+
+    <div class="filters-row">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">Toutes</button>
+        <button class="filter-tab" data-filter="desert">Désert</button>
+        <button class="filter-tab" data-filter="montagne">Montagne</button>
+        <button class="filter-tab" data-filter="villes">Villes</button>
+        <button class="filter-tab" data-filter="plages">Plages</button>
+        <button class="filter-tab" data-filter="aventure">Aventure</button>
+        <button class="filter-tab" data-filter="culture">Culture</button>
+      </div>
+
+      <div class="sort-wrap">
+        <label for="sortSelect">Trier par</label>
+        <select id="sortSelect">
+          <option value="recommended">Recommandés</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+          <option value="rating">Mieux notés</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tours-grid" id="toursGrid"></div>
+
+    <p class="no-results" id="noResults" hidden>Aucune excursion ne correspond à votre recherche pour le moment.</p>
+  </div>
+</section>
+
+<!-- ============ DESTINATIONS ============ -->
+<section class="section section-tinted" id="destinations">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Explorez nos destinations</h2>
+        <p class="section-subtitle">Six territoires, un seul pays aux mille visages.</p>
+      </div>
+    </div>
+
+    <div class="destinations-grid" id="destinationsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ POURQUOI NOUS ============ -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-head center">
+      <h2 class="section-title">Voyagez l'esprit tranquille</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"/></svg>
+        </div>
+        <h3>Guides locaux expérimentés</h3>
+        <p>Des accompagnateurs nés dans les régions qu'ils font découvrir.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="14" height="7" rx="1.5"/><path d="M17 12h2.5l1.5 2.5V17h-4"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="16.5" cy="18.5" r="1.5"/></svg>
+        </div>
+        <h3>Transport confortable</h3>
+        <p>Véhicules récents et climatisés, adaptés à chaque itinéraire.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M7 7h6.5a2.5 2.5 0 0 1 0 5H8a2.5 2.5 0 0 0 0 5H16"/></svg>
+        </div>
+        <h3>Prix transparents</h3>
+        <p>Aucun frais caché : le prix annoncé est le prix payé.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.5a9.5 9.5 0 1 0 0 19a9.5 9.5 0 0 0 0-19z"/><path d="M12 7v5l3.3 2"/></svg>
+        </div>
+        <h3>Assistance WhatsApp</h3>
+        <p>Une équipe joignable à toute heure pour vous accompagner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPÉRIENCE / STORY ============ -->
+<section class="story-section" id="apropos">
+  <div class="story-media">
+    <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=1400&auto=format&fit=crop" alt="Voyageurs découvrant une médina marocaine" loading="lazy">
+  </div>
+  <div class="story-content">
+    <p class="section-eyebrow">Notre philosophie</p>
+    <h2 class="story-title">Plus qu'un voyage,<br>une expérience.</h2>
+    <p class="story-text">Chez NOMADIA, chaque excursion est pensée comme une rencontre : avec un paysage, une culture, un mode de vie. Nos itinéraires évitent les sentiers trop parcourus pour privilégier des moments authentiques, organisés avec soin et adaptés à votre rythme.</p>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-num" data-target="500" data-suffix="+">0</span>
+        <span class="stat-label">Voyageurs</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="30" data-suffix="+">0</span>
+        <span class="stat-label">Expériences</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="4.9" data-decimal="1" data-suffix="/5">0</span>
+        <span class="stat-label">Note moyenne</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num-static">24/7</span>
+        <span class="stat-label">Assistance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIRCUITS ============ -->
+<section class="section section-tinted" id="circuits">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Nos circuits</h2>
+        <p class="section-subtitle">Des itinéraires complets, du sud saharien à la côte atlantique.</p>
+      </div>
+    </div>
+
+    <div class="circuits-grid" id="circuitsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ AVIS ============ -->
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="section-head center">
+      <h2 class="section-title">Ils ont voyagé avec nous</h2>
+    </div>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-track" id="testimonialTrack"></div>
+      <div class="testimonial-dots" id="testimonialDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section class="section instagram-section">
+  <div class="container">
+    <div class="section-head center">
+      <h2 class="section-title">Suivez l'aventure</h2>
+      <p class="section-subtitle">@nomadia.travel</p>
+    </div>
+
+    <div class="instagram-grid" id="instagramGrid"></div>
+
+    <div class="center-btn">
+      <a href="https://instagram.com/nomadia.travel" target="_blank" rel="noopener" class="btn btn-outline">Voir notre Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq-section">
+  <div class="container container-narrow">
+    <div class="section-head center">
+      <h2 class="section-title">Questions fréquentes</h2>
+    </div>
+
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-question">Comment réserver une excursion ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Choisissez une excursion, cliquez sur « Réserver maintenant » et complétez le formulaire. Vous pouvez aussi réserver directement via WhatsApp.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Le transport est-il inclus ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Oui, le transport aller-retour en véhicule climatisé est inclus dans la majorité de nos excursions, sauf mention contraire.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Peut-on personnaliser une excursion ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Absolument. Contactez-nous sur WhatsApp pour adapter la durée, les étapes ou les activités selon vos envies.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Acceptez-vous les familles ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Oui, nos excursions et circuits sont adaptés aux familles, avec des rythmes et activités ajustables pour les enfants.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Comment fonctionne le paiement ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Un acompte confirme votre réservation, le solde se règle en espèces ou par virement avant ou le jour de l'excursion.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Est-il possible de réserver via WhatsApp ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Oui, c'est même le moyen le plus rapide : notre équipe répond généralement en quelques minutes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Faites-vous des transferts depuis les aéroports ?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Oui, nous proposons des transferts privés depuis et vers les principaux aéroports du Maroc.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Contact</p>
+        <h2 class="section-title">Parlons de votre<br>prochain voyage.</h2>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Téléphone</span>
+            <a href="tel:+212600000000">+212 6 00 00 00 00</a>
+          </li>
+          <li>
+            <span class="contact-label">WhatsApp</span>
+            <a id="contactWhatsapp" target="_blank" rel="noopener">Discuter maintenant</a>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:contact@nomadia-travel.ma">contact@nomadia-travel.ma</a>
+          </li>
+          <li>
+            <span class="contact-label">Instagram</span>
+            <a href="https://instagram.com/nomadia.travel" target="_blank" rel="noopener">@nomadia.travel</a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label>Nom<input type="text" name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+        </div>
+        <div class="form-row">
+          <label>Téléphone<input type="tel" name="phone" required></label>
+          <label>Destination<input type="text" name="destination"></label>
+        </div>
+        <label class="full">Message<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-main light">Nomadia Travel</span>
+      <p>Explorez le Maroc. Créez des souvenirs.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#accueil">Accueil</a>
+      <a href="#excursions">Excursions</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#circuits">Circuits</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <a href="#destinations">Marrakech</a>
+      <a href="#destinations">Fès</a>
+      <a href="#destinations">Merzouga</a>
+      <a href="#destinations">Chefchaouen</a>
+      <a href="#destinations">Essaouira</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a id="footerWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/nomadia.travel" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:contact@nomadia-travel.ma">Email</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 NOMADIA TRAVEL — Tous droits réservés.</div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="floating-whatsapp" id="floatingWhatsapp" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.9-4.45 9.9-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.55-3.7 8.24-8.25 8.24c-1.44 0-2.85-.37-4.09-1.08l-.29-.17l-3.11.82l.83-3.03l-.19-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.24-8.24z"/></svg>
+</a>
+
+<!-- ============ FAVORITES DRAWER ============ -->
+<div class="fav-drawer" id="favDrawer">
+  <div class="fav-drawer-head">
+    <h3>Mes favoris</h3>
+    <button id="favClose" aria-label="Fermer">&times;</button>
+  </div>
+  <div class="fav-drawer-body" id="favDrawerBody"></div>
+</div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+<!-- ============ TOUR DETAILS MODAL ============ -->
+<div class="modal-backdrop" id="tourModalBackdrop">
+  <div class="modal tour-modal" id="tourModal">
+    <button class="modal-close" id="tourModalClose" aria-label="Fermer">&times;</button>
+    <div class="tour-modal-media">
+      <img id="tmImage" src="" alt="">
+      <span class="tour-badge" id="tmBadge"></span>
+    </div>
+    <div class="tour-modal-body">
+      <p class="tm-destination" id="tmDestination"></p>
+      <h3 class="tm-title" id="tmTitle"></h3>
+      <div class="tm-meta">
+        <span id="tmDuration"></span>
+        <span class="dot">·</span>
+        <span id="tmRating"></span>
+      </div>
+      <p class="tm-desc" id="tmDesc"></p>
+
+      <h4>Programme</h4>
+      <ul class="tm-program" id="tmProgram"></ul>
+
+      <div class="tm-columns">
+        <div>
+          <h4>Ce qui est inclus</h4>
+          <ul class="tm-included" id="tmIncluded"></ul>
+        </div>
+        <div>
+          <h4>Ce qui n'est pas inclus</h4>
+          <ul class="tm-excluded" id="tmExcluded"></ul>
+        </div>
+      </div>
+
+      <div class="tm-book-row">
+        <div class="tm-price">
+          <span class="tm-price-label">À partir de</span>
+          <span class="tm-price-value" id="tmPrice"></span>
+        </div>
+        <div class="qty-selector">
+          <button type="button" id="tmQtyMinus">&minus;</button>
+          <span id="tmQtyValue">2</span>
+          <button type="button" id="tmQtyPlus">+</button>
+        </div>
+      </div>
+
+      <div class="tm-actions">
+        <button class="btn btn-primary" id="tmBookBtn">Réserver maintenant</button>
+        <a class="btn btn-whatsapp" id="tmWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BOOKING MODAL ============ -->
+<div class="modal-backdrop" id="bookingModalBackdrop">
+  <div class="modal booking-modal" id="bookingModal">
+    <button class="modal-close" id="bookingModalClose" aria-label="Fermer">&times;</button>
+
+    <div id="bookingFormWrap">
+      <p class="section-eyebrow">Réservation</p>
+      <h3 class="booking-title">Demande de réservation</h3>
+      <p class="booking-tour-name" id="bookingTourName"></p>
+
+      <form id="bookingForm">
+        <label>Nom complet<input type="text" name="fullname" required></label>
+        <div class="form-row">
+          <label>Téléphone<input type="tel" name="phone" required></label>
+          <label>Email<input type="email" name="email" required></label>
+        </div>
+        <div class="form-row">
+          <label>Nombre de voyageurs<input type="number" name="travelers" min="1" value="2" required></label>
+          <label>Date souhaitée<input type="date" name="date" required></label>
+        </div>
+        <label>Excursion sélectionnée<input type="text" name="tour" id="bookingTourInput" readonly></label>
+        <label>Message<textarea name="message" rows="3" placeholder="Une précision à ajouter ?"></textarea></label>
+        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+      </form>
+    </div>
+
+    <div id="bookingConfirmation" class="booking-confirmation" hidden>
+      <div class="confirm-icon">✓</div>
+      <h3>Demande envoyée !</h3>
+      <p>Merci, votre demande a bien été reçue. Notre équipe vous recontactera très rapidement pour finaliser votre réservation.</p>
+      <button class="btn btn-outline" id="confirmCloseBtn">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
