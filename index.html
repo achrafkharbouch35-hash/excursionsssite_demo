@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUNAÉ — Pyjamas & vêtements féminins</title>
+<meta name="description" content="LUNAÉ — Pyjamas et vêtements féminins élégants. Commandez facilement via WhatsApp.">
+
+<!-- ============ POLICES ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =====================================================
+     BARRE D'ANNONCE
+===================================================== -->
+<div class="announce-bar">
+  <p>Livraison à domicile partout au Maroc — Commande rapide via WhatsApp</p>
+</div>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="#accueil" class="logo">LUNA<span>É</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil" class="nav-link">Accueil</a>
+      <a href="#boutique" class="nav-link">Boutique</a>
+      <a href="#" class="nav-link" data-filter-cat="Pyjamas">Pyjamas</a>
+      <a href="#" class="nav-link" data-filter-cat="Vêtements">Vêtements</a>
+      <a href="#" class="nav-link" data-filter-cat="Nouveautés">Nouveautés</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="navbar-icons">
+      <button class="icon-btn" id="searchToggle" aria-label="Rechercher">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+      </button>
+      <button class="icon-btn" id="cartToggle" aria-label="Panier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1.2"/><circle cx="17" cy="21" r="1.2"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- barre de recherche déroulante -->
+  <div class="search-bar" id="searchBar">
+    <input type="text" id="searchInput" placeholder="Rechercher un pyjama, un ensemble...">
+    <button id="searchClose" aria-label="Fermer">&times;</button>
+  </div>
+</header>
+
+<!-- overlay mobile menu -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main id="accueil">
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1600&q=80" alt="Femme élégante en tenue confortable LUNAÉ">
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Collection Automne</p>
+      <h1 class="hero-title">Feel Beautiful.<br>Feel Comfortable.</h1>
+      <p class="hero-subtitle">Pyjamas &amp; vêtements féminins pensés pour votre style et votre confort.</p>
+      <div class="hero-actions">
+        <a href="#boutique" class="btn btn-primary">Découvrir la collection</a>
+        <a href="#" id="heroWhatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 4.99L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm5.83 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.83-.12-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.16-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36h.55c.18 0 .42-.03.65.5.24.56.82 1.94.9 2.08.07.14.12.31.02.5-.1.19-.15.3-.29.46-.15.17-.31.38-.44.5-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.14.49.22.56.34.08.13.08.72-.16 1.4Z"/></svg>
+          Commander sur WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CATÉGORIES
+  ===================================================== -->
+  <section class="categories">
+    <div class="section-head">
+      <h2>Nos univers</h2>
+    </div>
+    <div class="category-grid">
+      <a href="#boutique" class="category-card" data-filter-cat="Pyjamas">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80" alt="Pyjamas">
+        <span class="category-name">Pyjamas</span>
+      </a>
+      <a href="#boutique" class="category-card" data-filter-cat="Ensembles">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt="Ensembles">
+        <span class="category-name">Ensembles</span>
+      </a>
+      <a href="#boutique" class="category-card" data-filter-cat="Vêtements">
+        <img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=700&q=80" alt="Vêtements femme">
+        <span class="category-name">Vêtements femme</span>
+      </a>
+      <a href="#boutique" class="category-card" data-filter-cat="Nouveautés">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Nouveautés">
+        <span class="category-name">Nouveautés</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       NOUVEAUTÉS
+  ===================================================== -->
+  <section class="products-section" id="nouveautes">
+    <div class="section-head">
+      <h2>Nos nouveautés</h2>
+      <a href="#boutique" class="section-link">Voir toute la boutique</a>
+    </div>
+    <div class="product-grid" id="newArrivalsGrid"></div>
+  </section>
+
+  <!-- =====================================================
+       BEST SELLERS
+  ===================================================== -->
+  <section class="products-section alt">
+    <div class="section-head">
+      <h2>Best Sellers</h2>
+      <a href="#boutique" class="section-link">Voir toute la boutique</a>
+    </div>
+    <div class="product-grid" id="bestSellersGrid"></div>
+  </section>
+
+  <!-- =====================================================
+       BOUTIQUE COMPLÈTE
+  ===================================================== -->
+  <section class="shop-section" id="boutique">
+    <div class="section-head">
+      <h2>La boutique</h2>
+    </div>
+
+    <div class="shop-toolbar">
+      <div class="shop-filters" id="categoryFilters">
+        <button class="filter-chip active" data-cat="Tous">Tous</button>
+        <button class="filter-chip" data-cat="Pyjamas">Pyjamas</button>
+        <button class="filter-chip" data-cat="Ensembles">Ensembles</button>
+        <button class="filter-chip" data-cat="Vêtements">Vêtements</button>
+      </div>
+
+      <div class="shop-sort">
+        <label for="sortSelect">Trier par</label>
+        <select id="sortSelect">
+          <option value="default">Pertinence</option>
+          <option value="newest">Nouveautés</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="shop-price-filter">
+      <label for="priceRange">Prix maximum : <span id="priceValue">600 DH</span></label>
+      <input type="range" id="priceRange" min="100" max="600" step="10" value="600">
+    </div>
+
+    <div class="product-grid" id="shopGrid"></div>
+    <p class="no-results" id="noResults" hidden>Aucun produit ne correspond à votre recherche.</p>
+  </section>
+
+  <!-- =====================================================
+       INSTAGRAM
+  ===================================================== -->
+  <section class="instagram-section">
+    <div class="section-head center">
+      <h2>Suivez-nous sur Instagram</h2>
+      <p>L'univers LUNAÉ, chaque jour dans votre fil</p>
+    </div>
+    <div class="instagram-grid">
+      <a href="#" class="ig-item" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=500&q=80" alt="Instagram LUNAÉ"></a>
+      <a href="#" class="ig-item" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Instagram LUNAÉ"></a>
+      <a href="#" class="ig-item" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=500&q=80" alt="Instagram LUNAÉ"></a>
+      <a href="#" class="ig-item" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="Instagram LUNAÉ"></a>
+      <a href="#" class="ig-item" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500&q=80" alt="Instagram LUNAÉ"></a>
+      <a href="#" class="ig-item" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=500&q=80" alt="Instagram LUNAÉ"></a>
+    </div>
+    <a href="#" class="btn btn-outline ig-btn" target="_blank" rel="noopener">@LUNAE.BOUTIQUE</a>
+  </section>
+
+  <!-- =====================================================
+       WHATSAPP CTA
+  ===================================================== -->
+  <section class="whatsapp-cta" id="contact">
+    <div class="whatsapp-cta-inner">
+      <h2>Une question ? Besoin d'aide ?</h2>
+      <p>Notre équipe vous répond directement sur WhatsApp, du lundi au samedi.</p>
+      <a href="#" id="ctaWhatsapp" class="btn btn-whatsapp large" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 4.99L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm5.83 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.83-.12-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.16-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36h.55c.18 0 .42-.03.65.5.24.56.82 1.94.9 2.08.07.14.12.31.02.5-.1.19-.15.3-.29.46-.15.17-.31.38-.44.5-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.14.49.22.56.34.08.13.08.72-.16 1.4Z"/></svg>
+        Nous contacter sur WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#accueil" class="logo footer-logo">LUNA<span>É</span></a>
+      <p>Pyjamas et vêtements féminins, pensés pour votre confort et votre style au quotidien.</p>
+      <div class="footer-social">
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" id="footerWhatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 4.99L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm5.83 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.83-.12-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.16-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36h.55c.18 0 .42-.03.65.5.24.56.82 1.94.9 2.08.07.14.12.31.02.5-.1.19-.15.3-.29.46-.15.17-.31.38-.44.5-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.14.49.22.56.34.08.13.08.72-.16 1.4Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Catégories</h3>
+      <ul>
+        <li><a href="#" data-filter-cat="Pyjamas">Pyjamas</a></li>
+        <li><a href="#" data-filter-cat="Ensembles">Ensembles</a></li>
+        <li><a href="#" data-filter-cat="Vêtements">Vêtements</a></li>
+        <li><a href="#" data-filter-cat="Nouveautés">Nouveautés</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Informations</h3>
+      <ul>
+        <li><a href="#">Livraison</a></li>
+        <li><a href="#">Retours &amp; échanges</a></li>
+        <li><a href="#">Guide des tailles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Boutique</h3>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#boutique">Tous les produits</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" id="footerWhatsappLink" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> LUNAÉ. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- =====================================================
+     BOUTON WHATSAPP FLOTTANT (mobile & desktop)
+===================================================== -->
+<a href="#" id="floatingWhatsapp" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 4.99L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm5.83 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.83-.12-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.16-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36h.55c.18 0 .42-.03.65.5.24.56.82 1.94.9 2.08.07.14.12.31.02.5-.1.19-.15.3-.29.46-.15.17-.31.38-.44.5-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.13.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.14.49.22.56.34.08.13.08.72-.16 1.4Z"/></svg>
+</a>
+
+<!-- =====================================================
+     PANIER (DRAWER)
+===================================================== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Votre panier</h2>
+    <button class="close-btn" id="cartClose" aria-label="Fermer le panier">&times;</button>
+  </div>
+
+  <div class="cart-body" id="cartBody">
+    <!-- rempli par script.js -->
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">0 DH</span>
+    </div>
+    <button class="btn btn-outline cart-clear" id="cartClearBtn">Vider le panier</button>
+    <a href="#" id="cartWhatsapp" class="btn btn-whatsapp full" target="_blank" rel="noopener">
+      Commander sur WhatsApp
+    </a>
+  </div>
+</aside>
+
+<!-- =====================================================
+     FICHE PRODUIT (MODAL)
+===================================================== -->
+<div class="product-modal-overlay" id="productModalOverlay">
+  <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+    <button class="close-btn modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+
+    <div class="product-modal-inner">
+      <div class="modal-gallery">
+        <div class="modal-main-image">
+          <span class="badge" id="modalBadge"></span>
+          <img id="modalMainImg" src="" alt="">
+        </div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+
+      <div class="modal-info">
+        <p class="modal-category" id="modalCategory"></p>
+        <h2 id="modalProductName"></h2>
+        <div class="modal-price-row">
+          <span class="price" id="modalPrice"></span>
+          <span class="old-price" id="modalOldPrice"></span>
+        </div>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-option-group">
+          <p class="option-label">Taille</p>
+          <div class="option-list" id="modalSizes"></div>
+        </div>
+
+        <div class="modal-option-group">
+          <p class="option-label">Couleur</p>
+          <div class="option-list" id="modalColors"></div>
+        </div>
+
+        <div class="modal-option-group">
+          <p class="option-label">Quantité</p>
+          <div class="qty-selector">
+            <button id="qtyMinus" aria-label="Diminuer la quantité">−</button>
+            <span id="qtyValue">1</span>
+            <button id="qtyPlus" aria-label="Augmenter la quantité">+</button>
+          </div>
+        </div>
+
+        <p class="option-warning" id="optionWarning" hidden>Merci de choisir une taille et une couleur.</p>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="modalAddToCart">Ajouter au panier</button>
+          <a href="#" class="btn btn-whatsapp" id="modalWhatsapp" target="_blank" rel="noopener">Commander sur WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- toast de confirmation -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
